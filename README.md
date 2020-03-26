@@ -1,4 +1,4 @@
-# Spotify: how to retrieve your saved music, format it neatly, and keep it locally
+### Spotify: how to retrieve your saved music, format it neatly, and keep it locally
 
 The code in this repo allows any Spotify user (with a free or paid subscription) to download the entirety of one's Spotify library ('Liked songs') from Youtube, ensuring that the info relating to those files is appropriately formatted; thus enabling the user to keep a well-organized library in iTunes.
 
