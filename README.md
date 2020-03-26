@@ -9,7 +9,8 @@ The name of the files downloaded through the `ytmdl` package is usually that of 
 Once a match is found, the `updating_id_tags.py` iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album). The files can then be imported into iTunes, thus enabling one to keep a local copy of your Spotify music.
 
 
-#### Pre-requisites (all available through pip): 
+#### Prerequisites (all available through pip): 
+* Python 3.x
 * [`spotipy`](https://spotipy.readthedocs.io/en/2.9.0/)
 * [`ffmpeg`](https://github.com/FFmpeg/FFmpeg)
 * [`ytmdl`](https://github.com/deepjyoti30/ytmdl)
