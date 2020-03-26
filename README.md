@@ -1,4 +1,4 @@
-#### Spotify: how to retrieve your saved music, format it neatly, and keep it locally
+### Spotify: how to retrieve your saved music, format it neatly, and keep it locally
 
 ##### Intro and overview
 
