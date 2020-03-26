@@ -10,8 +10,8 @@ Once a match is found, the `updating_id_tags.py` iterates through the list of do
 
 
 #### Pre-requisites (all available through pip): 
-* spotipy
-* ffmpeg
-* ytmdl
-* fuzzywuzzy
+* [`spotipy`](https://spotipy.readthedocs.io/en/2.9.0/)
+* [`ffmpeg`](https://github.com/FFmpeg/FFmpeg)
+* [`ytmdl`](https://github.com/deepjyoti30/ytmdl)
+* [`fuzzywuzzy`](https://github.com/seatgeek/fuzzywuzzy)
 
