@@ -1,12 +1,21 @@
-# Spotify project
+# Spotify: how to retrieve your saved music, format it neatly, and keep it locally
 
-## Scraping the list of saved songs from your spotify account, downloading the corresponding songs from youtube, formatting the .mp3 files to be compatible with itunes.
+The code in this repo allows any Spotify user (with a free or paid subscription) to download the entirety of one's Spotify library ('Liked songs') from Youtube, ensuring that the info relating to those files (i.e. 'id3 tags') is appropriately formatted; thus enabling the user to keep a well-organized library in iTunes.
 
-### Pre-requisites (all available through pip): 
+Briefly, the code contained in `get_track_list_download.py` retrieves the list of the user's saved songs. The information contained in this list of songs is passed to the `ytmdl` command, which enables downloading of the corresponding songs from Youtube.
+
+The name of the files downloaded through the `ytmdl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). Thus, each .mp3 file's name (usually containing the name of the song and of the artist in undefined order) needs to be matched back to one of the entries of the list that was retrieved from Spotify.
+
+
+
+
+
+#### Pre-requisites (all available through pip): 
 * spotipy
 * ffmpeg
 * ytmdl
 * fuzzywuzzy
+
 
 
 
