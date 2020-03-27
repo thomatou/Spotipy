@@ -2,8 +2,6 @@ import os
 import re
 import sys
 
-Fuck christie
-
 def update_id_tags(name_of_directory):
     '''
     name_of_directory is where the music is stored
