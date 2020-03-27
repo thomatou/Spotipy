@@ -102,7 +102,3 @@ if __name__ == '__main__':
         match_names(sys.argv[1], sys.argv[2])
     else:
         print('Try again with the following usage: %s list_of_tracks_from_spotify path_to_music_folder' %(sys.argv[0]))
-
-
-
-#match_names('updated_list_of_tracks.txt', '/Users/tchavas/Music/ytmdl')

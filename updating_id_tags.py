@@ -71,7 +71,3 @@ if __name__ == '__main__':
         update_id_tags(sys.argv[1])
     else:
         print('Try again with the following usage: %s path_to_music_folder' %(sys.argv[0]))
-
-
-
-# update_id_tags('/Users/tchavas/Music/ytmdl')

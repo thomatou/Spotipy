@@ -3,7 +3,6 @@ import os
 import sys
 
 
-# Music folder for current user: '/Users/tchavas/Music/ytmdl'
 
 
 # Some of the songs don't download properly, usually when the song is uploaded by the actual artist account on youtube (blocked ytmdl and other downloading tools?) We can catch those by looking at the size of the file.
