@@ -18,7 +18,7 @@ Once a match is found, the `updating_id_tags.py` iterates through the list of do
 * [`ytmdl`](https://github.com/deepjyoti30/ytmdl)
 * [`fuzzywuzzy`](https://github.com/seatgeek/fuzzywuzzy)
 
-### Getting started
+### Let's go!
 
 Assuming you already have an account with Spotify, you'll need to register an app with them ([see here](https://developer.spotify.com/dashboard/applications) (which will take a whole minute). In return, you will be given a client ID and a client secret, which you will want to put into the `credentials.py`; this will authorize the call that you'll make with the Spotify API. 
 
