@@ -22,7 +22,7 @@ Once a match is found, `updating_id_tags.py` iterates through the list of downlo
 
 Assuming you already have an account with Spotify, you'll need to register an app with them ([see here](https://developer.spotify.com/dashboard/applications) (which will take a whole two minutes). In return, you will be given a client ID and a client secret, which you will want to put into the `credentials.py`; this will authorize the call that you'll make with the Spotify API. 
 
-From the command-line, run the following command, repalcing `spotify_username` with your actual username:
+From the command-line, run the following command, replacing `spotify_username` with your actual username:
 
 `python3.x get_track_list_download.py spotify_username name_of_file_containing_spotify_data.txt`
 
