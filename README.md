@@ -8,9 +8,9 @@ Assuming all the external pre-requisites are installed (see below), the code in 
 
 Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `ytmdl` command from the eponymous [package](https://github.com/deepjyoti30/ytmdl), which enables downloading of the corresponding songs from Youtube.
 
-The name of the files downloaded through the `ytmdl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). Thus, each song's unique identifier is used to match it back to its corresponding entry in the .json dictionary that was originally retrieved from Spotify. 
+The name of the files downloaded through the `ytmdl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). The `Spotify_downloader().automate_download()` function renames each downloaded file so that it includes the song's unique identifier, as defined by the `Spotify_downloader().get_saved_tracks_from_user()` function.
 
-The `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album). The files can then be imported into iTunes, thus enabling one to keep a local copy of your Spotify music.
+Finally, the `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album) using each song's unique identifier. The files can then be imported into iTunes, thus enabling one to keep a local copy of your Spotify music.
 
 ### Prerequisites: 
 * Python 3.x
