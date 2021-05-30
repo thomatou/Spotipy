@@ -200,9 +200,8 @@ if __name__ == '__main__':
 
         list_of_songs = user_class.get_saved_tracks_from_user()
 
-        with open("/Users/tchavas/Desktop/Jobs/Seattle/Job/Coding/spotify/list_of_spotify_songs.json") as f:
-            list_of_songs = json.load(f)
-
+        # with open("./list_of_spotify_songs.json") as f:
+        #     list_of_songs = json.load(f)
 
         print("Song list has been downloaded \
         into 'list_of_spotify_songs.json'")
