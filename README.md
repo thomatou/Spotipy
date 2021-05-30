@@ -1,16 +1,6 @@
 ## Spotify: how to retrieve your saved music, format it neatly, and keep it locally
 
-### Intro and overview
-
-The python scripts in this repo allow any Spotify user (with a free or paid subscription) to download the entirety of one's Spotify library ('Liked songs') from Youtube, ensuring that the info relating to those files is appropriately formatted; thus enabling the user to keep a well-organized library in iTunes.
-
-Assuming all the external pre-requisites are installed (see below), the code in `Spotify_downloader.py` allows one to do this. Briefly, the `Spotify_downloader().get_saved_tracks_from_user()` function retrieves the list of a Spotify user's saved songs and gives each song a unique identifier. A copy of this dictionary is also saved to disk in .json format, for reference.
-
-Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `youtube-dl` command from the eponymous [package](https://github.com/ytdl-org/youtube-dl), which enables downloading of the corresponding songs from Youtube.
-
-The name of the files downloaded through the `youtube-dl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). The `Spotify_downloader().automate_download()` function renames each downloaded file so that it includes the song's unique identifier, as defined by the `Spotify_downloader().get_saved_tracks_from_user()` function.
-
-Finally, the `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album) using each song's unique identifier. The files can then be imported into iTunes, and will neatly organize themselves according to the id3 tags.
+The python scripts in this repo allow any Spotify user (with a free or paid subscription) to download the entirety of one's Spotify library ('Liked songs') from Youtube, ensuring that the info relating to those files is appropriately formatted; thus enabling the user to keep a well-organized library in iTunes for free.
 
 ### Prerequisites: 
 * Python > 3.7. Tested on MacOS 10.15
@@ -36,7 +26,17 @@ Finally, run the following command, replacing `spotify_username` with your actua
 
 Assuming your client ID and client secret are valid, this will download a list of `spotify_username`'s liked songs into `list_of_spotify_songs.json`. The songs from this list will be downloaded into `./songs`, and their id tags will be updated. 
 
-You can then import the music from this folder into iTunes to find your neatly organized music library. Enjoy!  
+You can then import the music from this folder into iTunes to find your neatly organized music library. Enjoy!
+
+### How does this work? 
+
+Briefly, the `Spotify_downloader().get_saved_tracks_from_user()` function retrieves the list of a Spotify user's saved songs and gives each song a unique identifier. A copy of this dictionary is also saved to disk in .json format, for reference.
+
+Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `youtube-dl` command from the eponymous [package](https://github.com/ytdl-org/youtube-dl), which enables downloading of the corresponding songs from Youtube.
+
+The name of the files downloaded through the `youtube-dl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). The `Spotify_downloader().automate_download()` function renames each downloaded file so that it includes the song's unique identifier, as defined by the `Spotify_downloader().get_saved_tracks_from_user()` function.
+
+Finally, the `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album) using each song's unique identifier. The files can then be imported into iTunes, and will neatly organize themselves according to the id3 tags.
 
 ### FAQ
 
@@ -47,5 +47,3 @@ Is this going to work perfectly? Probably not. The program downloads the audio f
 Why can't you make this perfect? This is a side-project that I've coded up in my spare time. There's a reason why Spotify charges $10/month to manage your music –– and you'll note that they don't give you permanent access to that music.
 
 Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be < 320 kbps. You're downloading audio from YouTube, not buying a vinyl from a record store. 
-
-
