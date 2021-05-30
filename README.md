@@ -46,6 +46,6 @@ Is this going to work perfectly? Probably not. The program downloads the audio f
 
 Why can't you make this perfect? This is a side-project that I've coded up in my spare time. There's a reason why Spotify charges > $10/month for managing your music –– and you'll note that they don't give you permanent access to that music.
 
-Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be < 320 kbps. You're downloading audio from YouTube. 
+Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be < 320 kbps. You're downloading audio from YouTube, not buying a vinyl from a record store. 
 
 
