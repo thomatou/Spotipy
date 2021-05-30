@@ -10,13 +10,14 @@ Next, the `Spotify_downloader().automate_download()` function passes the downloa
 
 The name of the files downloaded through the `youtube-dl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). The `Spotify_downloader().automate_download()` function renames each downloaded file so that it includes the song's unique identifier, as defined by the `Spotify_downloader().get_saved_tracks_from_user()` function.
 
-Finally, the `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album) using each song's unique identifier. The files can then be imported into iTunes, thus enabling one to keep a local copy of your Spotify music.
+Finally, the `Spotify_downloader().add_id_tags()` function iterates through the list of downloaded songs and updates each file's id3 tags according to the information that was originally obtained from Spotify (specifically, name of the song, name of the artist, name of the album, and the track's number in the album) using each song's unique identifier. The files can then be imported into iTunes, and will neatly organize themselves according to the id3 tags.
 
 ### Prerequisites: 
-* Python 3.x
+* Python > 3.7. Tested on MacOS 10.15
 * [`spotipy`](https://spotipy.readthedocs.io/en/2.9.0/)
 * [`ffmpeg-python`](https://github.com/kkroening/ffmpeg-python)
 * [`youtube-dl`](https://github.com/ytdl-org/youtube-dl)
+* 
 
 ### Let's go!
 
@@ -37,7 +38,6 @@ Finally, run the following command, replacing `spotify_username` with your actua
 Assuming your client ID and client secret are valid, this will download a list of `spotify_username`'s liked songs into `list_of_spotify_songs.json`. The songs from this list will be downloaded into `./songs`, and their id tags will be updated. 
 
 You can then import the music from this folder into iTunes to find your neatly organized music library. Enjoy!  
-
 
 ### FAQ
 
