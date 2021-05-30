@@ -3,7 +3,7 @@
 The python scripts in this repo allow any Spotify user (with a free or paid subscription) to download the entirety of one's Spotify library ('Liked songs') from Youtube, ensuring that the info relating to those files is appropriately formatted; thus enabling the user to keep a well-organized library in iTunes for free.
 
 ### Prerequisites: 
-* Python > 3.7. Tested on MacOS 10.15
+* Python3.x. Tested on MacOS 10.15
 * [`spotipy`](https://spotipy.readthedocs.io/en/2.9.0/)
 * [`ffmpeg-python`](https://github.com/kkroening/ffmpeg-python)
 * [`youtube-dl`](https://github.com/ytdl-org/youtube-dl)
@@ -27,6 +27,10 @@ Finally, run the following command, replacing `spotify_username` with your actua
 Assuming your client ID and client secret are valid, this will download a list of `spotify_username`'s liked songs into `list_of_spotify_songs.json`. The songs from this list will be downloaded into `./songs`, and their id tags will be updated. 
 
 You can then import the music from this folder into iTunes to find your neatly organized music library. Enjoy!
+
+The `Spotify_downloader.py` will by default download the 100 songs that you've saved most recently. Consider this a test mode, so that you can check everything is functioning correctly before you go ahead and download 1000s of songs from YouTube. Once you're happy with your test run, you can download your whole library by passing `False` as an extra command-line argument (think of it as test mode = False), like so: 
+
+`python3.x Spotify_downloader.py spotify_username ./songs False`
 
 ### How does this work? 
 
