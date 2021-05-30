@@ -30,12 +30,10 @@ class Spotify_downloader:
         self.SPOTIFY_SCOPE = 'user-library-read'
         self.json_output_file = 'list_of_spotify_songs.json'
 
-    def get_saved_tracks_from_user(self):
+    def get_saved_tracks_from_user(self, test_mode=True):
         """
-        Get a spotify user's saved tracks.
-
-        Save a list of the music
-        and returns that list as a json object that is also saved to disk.
+        Get a spotify user's saved tracks. Write that list to disk as a json
+        object.
         """
         token = util.prompt_for_user_token(self.spotify_username,
                                            self.SPOTIFY_SCOPE,
@@ -58,7 +56,14 @@ class Spotify_downloader:
             # the song's index in the user's spotify library (starts at 1).
             all_tracks = {}
 
-            while total < data['total']:
+            # in test mode, only download 20 songs (most recent songs)
+            # in non-test mode, download entirety of user's library.
+            if test_mode:
+                num_songs = 20
+            else:
+                num_songs = data['total']
+
+            while total < num_songs:
             # Uncomment this line if you only want your most recent 100 songs
             # to be downloaded (and comment out the line above)
             # while total < 100:
@@ -144,6 +149,8 @@ class Spotify_downloader:
         print('These are the songs that could not be downloaded:',
                 download_fails)
 
+        os.chdir("../")
+
     def add_id_tags(self, json_list_of_songs):
         r"""
         Add id_tags to all the songs.
@@ -151,6 +158,8 @@ class Spotify_downloader:
         Need to remove special characters such as "\" or "/" from song name/
         artist/album in order to not trip up the command passed to terminal
         """
+
+        os.chdir(self.music_dir)
 
         id_tag_update_fail = []
 
@@ -160,7 +169,7 @@ class Spotify_downloader:
             # is being saved has pre-existing files, or files which weren't
             # downloaded/renamed properly
                 try:
-                    temp = json_list_of_songs[filename.split('_')[0]]
+                    temp = json_list_of_songs[int(filename.split('_')[0])]
                 except KeyError:
                     print("could not find this file in the original list of \
                     downloads:", filename)
@@ -190,16 +199,21 @@ class Spotify_downloader:
 
 
 if __name__ == '__main__':
-    if len(sys.argv) == 3:
+    if len(sys.argv) in [3,4]:
 
         spotify_username = sys.argv[1]
         path_to_music_folder = sys.argv[2]
+
+        boolean = True
+        if len(sys.argv) == 4:
+            boolean = sys.argv[3]
+
         user_class = Spotify_downloader(spotify_username, path_to_music_folder)
 
-        list_of_songs = user_class.get_saved_tracks_from_user()
+        list_of_songs = user_class.get_saved_tracks_from_user(test_mode=boolean)
 
         # with open("./list_of_spotify_songs.json") as f:
-        #     list_of_songs = json.load(f)
+        #     list_of_songs1 = json.load(f)
 
         print("Song list has been downloaded into 'list_of_spotify_songs.json'")
 
