@@ -24,9 +24,10 @@ Finally, the `Spotify_downloader().add_id_tags()` function iterates through the 
 
 Assuming you already have an account with Spotify, you'll need to register an app with them ([see here](https://developer.spotify.com/dashboard/applications) which will take you a whole two minutes). In return, you will be given a client ID and a client secret, which you will want to put into the `credentials.py`; this will authorize the call that you'll make to the Spotify API. 
 
-`youtube-dl` will download songs in the directory from which the command is called. This repo has an empty `songs` folder, whose relative path we will pass as the second argument to our program. You can of course choose a different directory if you want your downloaded music to end up somewhere else (but make sure that directory is empty).
+`youtube-dl` will download songs in the directory from which the command is called. We start by creating an empty `songs` folder, whose relative path we will pass as the second argument to our program. You can of course choose a different directory if you want your downloaded music to end up somewhere else (but make sure that directory is empty).
 
-Now, from the command-line, change directory to this repo and install the requirements: 
+From the command-line, change directory to this repo and create an empty folder called `songs`, then install the requirements: 
+`mkdir songs`
 
 `pip install -r requirements.txt`
 
