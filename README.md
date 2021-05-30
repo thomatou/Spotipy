@@ -48,6 +48,6 @@ Is this free? Yes.
 
 Is this going to work perfectly? Probably not. The program downloads the audio from the first video that comes up on YouTube when searching with song name + artist name. Occasionally, this might not be the correct video, and there's not a whole lot I can do to fix it while keeping the whole process fully automated.
 
-Why can't you make this perfect? This is a side-project that I've coded up in my spare time. There's a reason why Spotify charges $10/month to manage your music –– and you'll note that they don't give you permanent access to that music.
+Why can't you make this perfect? This is a side-project that I've coded up in my spare time. There's a reason why Spotify charges $10/month to manage your music––and you'll note that they don't give you permanent access to that music.
 
 Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be < 320 kbps. You're downloading audio from YouTube, not buying a vinyl from a record store. 
