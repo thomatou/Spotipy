@@ -22,7 +22,7 @@ Finally, the `Spotify_downloader().add_id_tags()` function iterates through the 
 
 First of all, you need to make sure that __all__ of the music downloaded by `ytmdl` goes into one single folder. To do so, make sure that `SONG_DIR` and `SONG_TEMP_DIR` in defaults.py in ytmdl folder are set to the same folder of your choice. Make a note of the path to this folder, which we will henceforth refer to as `path_to_music_directory`.
 
-Assuming you already have an account with Spotify, you'll need to register an app with them ([see here](https://developer.spotify.com/dashboard/applications) (which will take a whole two minutes). In return, you will be given a client ID and a client secret, which you will want to put into the `credentials.py`; this will authorize the call that you'll make to the Spotify API. 
+Assuming you already have an account with Spotify, you'll need to register an app with them ([see here](https://developer.spotify.com/dashboard/applications) which will take you a whole two minutes). In return, you will be given a client ID and a client secret, which you will want to put into the `credentials.py`; this will authorize the call that you'll make to the Spotify API. 
 
 From the command-line, run the following command, replacing `spotify_username` with your actual username:
 
