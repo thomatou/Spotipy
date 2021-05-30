@@ -59,7 +59,6 @@ class Spotify_downloader:
             all_tracks = {}
 
             while total < data['total']:
-
             # Uncomment this line if you only want your most recent 100 songs
             # to be downloaded (and comment out the line above)
             # while total < 100:
@@ -152,7 +151,7 @@ class Spotify_downloader:
         Need to remove special characters such as "\" or "/" from song name/
         artist/album in order to not trip up the command passed to terminal
         """
-        os.chdir(self.music_dir)
+
         id_tag_update_fail = []
 
         for filename in os.listdir():
@@ -186,8 +185,7 @@ class Spotify_downloader:
 
 
         if id_tag_update_fail:
-            print('Here are the files whose id3 tags were not updated\
-            properly:')
+            print('Here are the files whose id3 tags were not updated properly:')
             print(id_tag_update_fail)
 
 
@@ -203,8 +201,7 @@ if __name__ == '__main__':
         # with open("./list_of_spotify_songs.json") as f:
         #     list_of_songs = json.load(f)
 
-        print("Song list has been downloaded \
-        into 'list_of_spotify_songs.json'")
+        print("Song list has been downloaded into 'list_of_spotify_songs.json'")
 
         user_class.automate_download(list_of_songs)
 
@@ -212,8 +209,7 @@ if __name__ == '__main__':
 
         user_class.add_id_tags(list_of_songs)
 
-        print('Mp3 id tags have been updated, \
-        # music is now ready to be uploaded to iTunes.')
+        print('Mp3 id tags have been updated, music is now ready to be uploaded to iTunes.')
 
     else:
         print('Usage: %s spotify_username path/to/music/folder' % (sys.argv[0]))
