@@ -4,6 +4,7 @@ import time
 import spotipy
 import spotipy.util as util
 import credentials
+import sys
 
 class RadioDownloader:
     def __init__(self, username):
@@ -56,16 +57,19 @@ class RadioDownloader:
                                            credentials.client_id,
                                            credentials.client_secret,
                                            redirect_uri='http://localhost/')
-        if token:
-            sp = spotipy.Spotify(auth=token)
+        if not token:
+            print('invalid credentials, cannot create playlist. Exiting now')
+            sys.exit()
 
-            sp.user_playlist_create(user='thomatou',
-                                    name=self.playlist_name,
-                                    public=False,
-                                    description='Songs curated by Djamradio')
+        sp = spotipy.Spotify(auth=token)
+
+        sp.user_playlist_create(user=self.spotify_username,
+                                name=self.playlist_name,
+                                public=False,
+                                description='Songs curated by Djamradio')
 
     def populate_playlist(self, playlist_name):
-        
+
 
 
 RadioDownloader('thomatou').create_spotify_playlist('DJAM')
