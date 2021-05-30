@@ -58,8 +58,11 @@ class Spotify_downloader:
             # the song's index in the user's spotify library (starts at 1).
             all_tracks = {}
 
-            # while total < data['total']:
-            while total < 100:
+            while total < data['total']:
+
+            # Uncomment this line if you only want your most recent 100 songs
+            # to be downloaded (and comment out the line above)
+            # while total < 100:
 
                 results = sp.current_user_saved_tracks(limit=max, offset=total)
                 counter = 0
