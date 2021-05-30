@@ -28,7 +28,7 @@ Assuming your client ID and client secret are valid, this will download a list o
 
 You can then import the music from this folder into iTunes to find your neatly organized music library. Enjoy!
 
-The `Spotify_downloader.py` will by default download the 100 songs that you've saved most recently. Consider this a test mode, so that you can check everything is functioning correctly before you go ahead and download 1000s of songs from YouTube. Once you're happy with your test run, you can download your whole library by passing `False` as an extra command-line argument (think of it as test mode = False), like so: 
+The `Spotify_downloader.py` will by default download the 20 songs that you've saved most recently. Consider this a test mode, so that you can check everything is functioning correctly before you go ahead and download 1000s of songs from YouTube. Once you're happy with your test run, you can download your whole library by passing `False` as an extra command-line argument (think of it as test mode = False), like so: 
 
 `python3.x Spotify_downloader.py spotify_username ./songs False`
 
