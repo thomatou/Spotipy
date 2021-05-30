@@ -40,7 +40,7 @@ You can then import the music from this folder into iTunes to find your neatly o
 
 ### FAQ
 
-Is this going to be free? Yes.
+Is this free? Yes.
 
 Is this going to work perfectly? Probably not. The program downloads the audio from the first video that comes up on YouTube when searching with song name + artist name. Occasionally, this might not be the correct video, and there's not a whole lot I can do to fix it while keeping the whole process fully automated.
 
