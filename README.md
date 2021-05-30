@@ -15,9 +15,7 @@ Finally, the `Spotify_downloader().add_id_tags()` function iterates through the 
 ### Prerequisites: 
 * Python 3.x
 * [`spotipy`](https://spotipy.readthedocs.io/en/2.9.0/)
-<!-- * [`ffmpeg`](https://github.com/FFmpeg/FFmpeg) -->
 * [`ffmpeg-python`](https://github.com/kkroening/ffmpeg-python)
-<!-- * [`ytmdl`](https://github.com/deepjyoti30/ytmdl) -->
 * [`youtube-dl`](https://github.com/ytdl-org/youtube-dl)
 
 ### Let's go!
