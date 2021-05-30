@@ -34,7 +34,7 @@ The `Spotify_downloader.py` will by default download the 100 songs that you've s
 
 ### How does this work? 
 
-Briefly, the `Spotify_downloader().get_saved_tracks_from_user()` function retrieves the list of a Spotify user's saved songs and gives each song a unique identifier. A copy of this dictionary is also saved to disk in .json format, for reference.
+The `Spotify_downloader().get_saved_tracks_from_user()` function retrieves the list of a Spotify user's saved songs and gives each song a unique identifier. A copy of this dictionary is also saved to disk in .json format, for reference.
 
 Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `youtube-dl` command from the eponymous [package](https://github.com/ytdl-org/youtube-dl), which enables downloading of the corresponding songs from Youtube.
 
