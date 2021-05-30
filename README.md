@@ -26,7 +26,11 @@ Assuming you already have an account with Spotify, you'll need to register an ap
 
 `youtube-dl` will download songs in the directory from which the command is called. This repo has an empty `songs` folder, whose relative path we will pass as the second argument to our program. You can of course choose a different directory if you want your downloaded music to end up somewhere else (but make sure that directory is empty).
 
-From the command-line, change directory to this repo and run the following command, replacing `spotify_username` with your actual username:
+Now, from the command-line, change directory to this repo and install the requirements: 
+
+`pip install -r requirements.txt`
+
+Finally, run the following command, replacing `spotify_username` with your actual username:
 
 `python3.x Spotify_downloader.py spotify_username ./songs`
 
