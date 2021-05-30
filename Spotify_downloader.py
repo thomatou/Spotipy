@@ -128,22 +128,6 @@ class Spotify_downloader:
                  stdout=subprocess.PIPE,
                  shell=True).stdout.decode('utf-8').split('\n')[0]
 
-            # # Re-try if the download didn't go ahead for some reason
-            # # Usually indicated by the size of the file being < 1 MB
-            # if os.stat(latest_song).st_size < 1e6:
-            #     time_before_download = time.time()
-            #
-            #     try:
-            #         os.system('''youtube-dl --extract-audio --audio-format mp3 --no-mtime "ytsearch2: %s"''' % (search_string))
-            #     except Exception:
-            #         download_fails.append(element)
-            #         continue
-            #
-            #     latest_song = subprocess.run(
-            #         ['ls -t *.mp3 |head -1'],
-            #         stdout=subprocess.PIPE,
-            #         shell=True).stdout.decode('utf-8').split('\n')[0]
-
         # This check is in place to make sure that the latest file downloaded
         # was downloaded after the start of this iteration of the for loop.
         # Otherwise, we'd rename the latest file downloaded, regardless of
