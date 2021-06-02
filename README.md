@@ -36,7 +36,7 @@ The `Spotify_downloader.py` will by default download the 20 songs that you've sa
 
 The `Spotify_downloader().get_saved_tracks_from_user()` function retrieves the list of a Spotify user's saved songs and gives each song a unique identifier. A copy of this dictionary is also saved to disk in .json format, for reference.
 
-Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `youtube-dl` command from the eponymous [package](https://github.com/ytdl-org/youtube-dl), which enables downloading of the corresponding songs from Youtube.
+Next, the `Spotify_downloader().automate_download()` function passes the downloaded list of songs to the `youtube-dl` command from the eponymous [package](https://github.com/ytdl-org/youtube-dl), which enables downloading of the corresponding songs from Youtube. The program downloads the audio from the first video that comes up on YouTube when searching with song name + artist name. Occasionally, this might not be the correct song; though I've found that it is reliable the majority of the time.
 
 The name of the files downloaded through the `youtube-dl` package is usually that of the corresponding Youtube video. Unfortunately, those names are not standardized and often lack important information to keep one's music library organized (name of the album, for instance). The `Spotify_downloader().automate_download()` function renames each downloaded file so that it includes the song's unique identifier, as defined by the `Spotify_downloader().get_saved_tracks_from_user()` function.
 
@@ -46,8 +46,4 @@ Finally, the `Spotify_downloader().add_id_tags()` function iterates through the 
 
 Is this free? Yes.
 
-Is this going to work perfectly? Probably not. The program downloads the audio from the first video that comes up on YouTube when searching with song name + artist name. Occasionally, this might not be the correct video, and there's not a whole lot I can do to fix it while keeping the whole process fully automated.
-
-Why can't you make this perfect? This is a side-project that I've coded up in my spare time. There's a reason why Spotify charges $10/month to manage your music––and you'll note that they don't give you permanent access to that music.
-
-Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be < 320 kbps. You're downloading audio from YouTube, not buying a vinyl from a record store. 
+Is this going give me .flac quality audio? No. You're going to get an .mp3 file, and the audio quality will likely be less than 320 kbps. You're downloading audio for free from YouTube, not buying vinyl from a record store. 
